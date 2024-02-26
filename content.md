@@ -5,7 +5,7 @@ Welcome to the next step in your journey as a budding software developer. Having
 ## Embracing Big O Notation: The Gateway to Efficiency 📈
 Before we dive into specific data structures and algorithms, let's talk about Big O Notation. Big O Notation is a mathematical notation that describes the complexity of your algorithm in terms of time and space. It's a crucial concept for understanding how well an algorithm scales as the size of the input data increases. Think of it as a way to quantify the efficiency of your solution, helping you to identify whether you're truly inventing the most effective approach to a problem.
 
-![](./assets/big-o-complexity.png)
+![](assets/big-o-complexity.png)
 [source](https://www.bigocheatsheet.com/)
 
 ## Data Structures: The Building Blocks 🧱
