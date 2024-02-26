@@ -33,6 +33,8 @@ puts students["Alice"]
 **Space Complexity**: O(n) - The space complexity is linear with respect to the number of key-value pairs stored in the hash. However, the operation of looking up a value is O(1) in time complexity.
 
 ### Binary Search
+
+<!-- TODO: maybe show non-recursive example -->
 ```ruby
 def binary_search(array, value, from=0, to=nil)
     to = array.count - 1 unless to
