@@ -8,6 +8,96 @@ Before we dive into specific data structures and algorithms, let's talk about Bi
 ![](assets/big-o-complexity.png)
 [source](https://www.bigocheatsheet.com/)
 
+Let's dive into some example code snippets in Ruby, illustrating common data structures and algorithms along with their associated Big O notations. These examples will help you understand how these concepts apply in real-world coding scenarios, particularly in the context of technical interviews.
+
+### Iterating over an Array
+```ruby
+numbers = [1, 2, 3, 4, 5]
+numbers.each do |number|
+  puts number
+end
+```
+
+**Time Complexity**: O(n) - This is because each element in the array is visited exactly once, so the time it takes to complete this operation scales linearly with the size of the array.
+
+**Space Complexity**: O(1) - The space required does not grow with the size of the input array since we're only printing the elements without storing anything extra.
+
+### Hash Lookup
+```ruby
+students = {"Alice" => 90, "Bob" => 85, "Charlie" => 95}
+puts students["Alice"]
+```
+
+**Time Complexity**: O(1) - Looking up a value in a hash by its key is a constant-time operation, meaning it takes the same amount of time regardless of the size of the hash.
+
+**Space Complexity**: O(n) - The space complexity is linear with respect to the number of key-value pairs stored in the hash. However, the operation of looking up a value is O(1) in time complexity.
+
+### Binary Search
+```ruby
+def binary_search(array, value, from=0, to=nil)
+    to = array.count - 1 unless to
+    mid = (from + to) / 2
+
+    if value < array[mid]
+        return binary_search(array, value, from, mid - 1)
+    elsif value > array[mid]
+        return binary_search(array, value, mid + 1, to)
+    else
+        return mid
+    end
+end
+
+sorted_numbers = [1, 4, 7, 9, 15, 24, 30]
+puts binary_search(sorted_numbers, 15)
+```
+
+**Time Complexity**: O(log n) - Binary search has a logarithmic time complexity because it splits the search interval in half each time, significantly reducing the number of comparisons needed to find the target value.
+
+**Space Complexity**: O(log n) due to the call stack, which uses space proportional to the depth of the recursion, which is logarithmic.
+
+### Bubble Sort
+
+```ruby
+def bubble_sort(array)
+  n = array.length
+  loop do
+    swapped = false
+
+    (n-1).times do |i|
+      if array[i] > array[i+1]
+        array[i], array[i+1] = array[i+1], array[i]
+        swapped = true
+      end
+    end
+
+    break unless swapped
+  end
+  array
+end
+
+unsorted_numbers = [4, 2, 7, 1, 3]
+puts bubble_sort(unsorted_numbers).inspect
+```
+
+**Time Complexity**: O(n^2) - Bubble sort is an example of a quadratic time complexity algorithm because it involves nested iterations over the collection, making it less efficient for large datasets.
+
+**Space Complexity**: O(1) - Bubble sort sorts the array in place and does not require additional storage that grows with the input size, making its space complexity constant.
+
+### Recursive Fibonacci
+
+```ruby
+def fibonacci(n)
+  return n if n <= 1
+  fibonacci(n-1) + fibonacci(n-2)
+end
+
+puts fibonacci(5)
+```
+
+**Time Complexity**: O(2^n) - The time complexity of the recursive Fibonacci algorithm is exponential due to the fact that it generates an exponentially growing number of function calls.
+
+**Space Complexity**: O(n) - The space complexity of the recursive Fibonacci is linear in the worst case due to the call stack. For each function call, a new frame is added to the call stack, and in the worst case, there are 'n' recursive calls for computing fibonacci(n).
+
 ## Data Structures: The Building Blocks 🧱
 Data structures are foundational concepts that enable us to organize and store data in a way that facilitates efficient access and modification. Here are some of the key structures you'll learn about:
 
