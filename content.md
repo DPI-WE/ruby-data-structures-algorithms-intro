@@ -30,7 +30,7 @@ puts students["Alice"]
 
 **Time Complexity**: O(1) - Looking up a value in a hash by its key is a constant-time operation, meaning it takes the same amount of time regardless of the size of the hash.
 
-**Space Complexity**: O(n) - The space complexity is linear with respect to the number of key-value pairs stored in the hash. However, the operation of looking up a value is O(1) in time complexity.
+**Space Complexity**: O(n) - The space complexity is linear with respect to the number of key-value pairs stored in the hash.
 
 ### Binary Search
 
