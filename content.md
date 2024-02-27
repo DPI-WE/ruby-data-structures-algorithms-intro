@@ -39,7 +39,7 @@ puts students["Alice"]
 Binary search is a fast algorithm for finding the position of a value within a sorted array. It works by repeatedly dividing in half the portion of the list that could contain the value, until you've narrowed the possible locations to just one.
 
 ```ruby
-# Define a method for performing binary search
+# Define a method for performing binary search that returns the index of the value in the array (or nil if it doesn't exist)
 # array: The sorted array in which to search for the value
 # value: The value to search for
 # from: The starting index of the segment of the array to be searched
