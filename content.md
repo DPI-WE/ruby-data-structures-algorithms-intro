@@ -2,7 +2,9 @@
 
 Welcome to the next step in your journey as a budding software developer. Having gained a solid foundation in Ruby and full-stack web development with Rails, you're now poised to delve deeper into the world of data structures and algorithms. This module is designed to arm you with the tools and knowledge necessary to excel in technical interviews and solve complex problems efficiently. Let's embark on this adventure together, where you will not only sharpen your coding skills but also become adept at thinking critically about algorithmic challenges.
 
-## Embracing Big O Notation: The Gateway to Efficiency 📈
+## Time and Space Complexity
+
+### Embracing Big O Notation: The Gateway to Efficiency 📈
 Before we dive into specific data structures and algorithms, let's talk about Big O Notation. Big O Notation is a mathematical notation that describes the complexity of your algorithm in terms of time and space. It's a crucial concept for understanding how well an algorithm scales as the size of the input data increases. Think of it as a way to quantify the efficiency of your solution, helping you to identify whether you're truly inventing the most effective approach to a problem.
 
 ![](assets/big-o-complexity.png)
@@ -10,7 +12,9 @@ Before we dive into specific data structures and algorithms, let's talk about Bi
 
 Let's dive into some example code snippets in Ruby, illustrating common data structures and algorithms along with their associated Big O notations. These examples will help you understand how these concepts apply in real-world coding scenarios, particularly in the context of technical interviews.
 
-### Iterating over an Array
+### Examples
+
+#### Iterating over an Array
 ```ruby
 numbers = [1, 2, 3, 4, 5]
 numbers.each do |number|
@@ -23,7 +27,7 @@ end
 
 **Space Complexity**: O(1) - The space required is *constant* since we're only printing the elements without storing anything extra.
 
-### Nested Loop
+#### Nested Loop
 Consider a scenario where we want to find all possible pairs of elements within an array. This task can be accomplished using a nested loop, where the outer loop iterates through each element, and the inner loop iterates through the elements again to pair with the element selected by the outer loop. 
 
 ```ruby
@@ -45,7 +49,7 @@ end
 
 **Space Complexity**: O(1) - The space required is *constant* since we're only printing the pairs without storing any additional structures that grow with the input size.
 
-### Hash Lookup
+#### Hash Lookup
 ```ruby
 students = {"Alice" => 90, "Bob" => 85, "Charlie" => 95}
 puts students["Alice"]
@@ -56,7 +60,7 @@ puts students["Alice"]
 
 **Space Complexity**: O(n) - The space complexity is *linear* with respect to the number of key-value pairs stored in the hash.
 
-### Binary Search
+#### Binary Search
 
 Binary search is a fast algorithm for finding the position of a value within a sorted array. It works by repeatedly dividing in half the portion of the list that could contain the value, until you've narrowed the possible locations to just one.
 
@@ -94,7 +98,7 @@ puts binary_search(sorted_numbers, 15)
 
 **Space Complexity**: O(log n) due to the call stack, which uses space proportional to the depth of the recursion, which is *logarithmic*.
 
-### Bubble Sort
+#### Bubble Sort
 
 The bubble sort algorithm is a simple sorting algorithm that repeatedly steps through the array, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the array is repeated until the list is sorted. The algorithm is named for the way smaller elements "bubble" to the top of the array (beginning of the array) because they are lighter, while larger elements sink to the bottom (end of the array).
 
@@ -146,7 +150,7 @@ puts bubble_sort(unsorted_numbers)
 
 **Space Complexity**: O(1) - Bubble sort sorts the array in place and does not require additional storage that grows with the input size, making its space complexity *constant*.
 
-### Recursive Fibonacci
+#### Recursive Fibonacci
 
 The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. That is, the sequence goes 0, 1, 1, 2, 3, 5, 8, 13, and so forth. The sequence is named after Leonardo of Pisa, known as Fibonacci, who introduced it to the Western world with his 1202 book "Liber Abaci".
 
@@ -175,7 +179,45 @@ puts fibonacci(5)
 **Space Complexity**: O(n) - The space complexity of the recursive Fibonacci is *linear* in the worst case due to the call stack. For each function call, a new frame is added to the call stack, and in the worst case, there are 'n' recursive calls for computing fibonacci(n).
 
 
-<!-- TODO: add some multiple choice questions on linear, quadratic, exponential, constant, logarithmic etc. -->
+<!-- TODO: O(n!) factorial example, eg all permutations in an array -->
+<!-- TODO: O(n log n) linearithmic example -->
+
+- What is the time complexity of searching for an element in an unsorted array?
+- O(1) - constant
+  - This is not correct because the search does not complete in a single step for all array sizes. The time to find an element depends on the array's length.
+- O(log n) - logarithmic
+  - This is incorrect because logarithmic complexity typically results from operations that can discard half of the remaining elements at each step, such as binary search in a sorted array, not applicable to unsorted arrays.
+- O(n) - linear
+  - That's right! Because the algorithm might need to check each element in the array once to find the target, making the time complexity linear in the size of the input.
+{: .choose_best #search_unsorted_array title="Searching an Unsorted Array" points="1" answer="3" }
+
+- What is the time complexity of inserting an element into a hash table?
+- O(n) - linear
+  - This is not correct because inserting an element into a hash table does not require iterating over all elements. The operation typically computes the hash and places the element in its bucket.
+- O(n log n)  -linearithmic
+  - Incorrect because linearithmic time complexity is not characteristic of hash table insertions, which do not involve sorting or operations that scale linearithmically with input size.
+- O(1) - constant
+  - That's right! Because hash tables are designed to allow very fast insertions (and lookups), typically requiring a constant amount of time regardless of the number of elements already in the table. Note that this assumes good hash function performance and load factor management.
+{: .choose_best #hash_table_insert title="Hash Table Insertion" points="1" answer="3" }
+
+- What is the time complexity of accessing the nth element of a linked list?
+- O(1) (constant)
+  - This is not correct because accessing an element in a linked list requires traversing the list from the head to the nth element, which takes more time as the list grows.
+- O(n^2) (quadratic)
+  - Incorrect because accessing an element does not involve nested iterations over the list. The operation requires a single pass through at most n elements.
+- O(n) (linear)
+  - That's right! Because accessing an element in a linked list involves traversing from the head of the list to the nth element, making the operation linear in the size of the list.
+{: .choose_best #access_linked_list title="Accessing an Element in a Linked List" points="1" answer="3" }
+
+- What is the time complexity of merging two sorted arrays of lengths n and m into one sorted array?
+- O(n log n)
+  - This is not correct because O(n log n) typically describes the complexity of sorting algorithms like mergesort or quicksort applied to unsorted data, not the merging of already sorted arrays.
+- O(n + m)
+  - That's right! Because each element from both arrays needs to be looked at only once to merge them into a sorted array, making the operation linear with respect to the total number of elements.
+- O(nm)
+  - This is not correct because O(nm) would imply a nested loop over both arrays, which is not necessary for merging sorted arrays.
+{: .choose_best #merge_sorted_arrays title="Merging Sorted Arrays" points="1" answer="2" }
+
 
 ## Data Structures: The Building Blocks 🧱
 Data structures are foundational concepts that enable us to organize and store data in a way that facilitates efficient access and modification. Here are some of the key structures you'll learn about:
