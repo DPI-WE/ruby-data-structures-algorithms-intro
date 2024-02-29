@@ -19,9 +19,31 @@ end
 ```
 {: .repl #array title="Iterating over an Array" points="1"}
 
-**Time Complexity**: O(n) - This is because each element in the array is visited exactly once, so the time it takes to complete this operation scales linearly with the size of the array.
+**Time Complexity**: O(n) - This is because each element in the array is visited exactly once, so the time it takes to complete this operation scales *linearly* with the size of the array.
 
-**Space Complexity**: O(1) - The space required does not grow with the size of the input array since we're only printing the elements without storing anything extra.
+**Space Complexity**: O(1) - The space required is *constant* since we're only printing the elements without storing anything extra.
+
+### Nested Loop
+Consider a scenario where we want to find all possible pairs of elements within an array. This task can be accomplished using a nested loop, where the outer loop iterates through each element, and the inner loop iterates through the elements again to pair with the element selected by the outer loop. 
+
+```ruby
+numbers = [1, 2, 3, 4, 5]
+
+# Iterate over each element in the array with the outer loop
+numbers.each_with_index do |outer_number, i|
+  # Iterate over the array again with the inner loop, starting from the current position of the outer loop
+  (i+1...numbers.length).each do |j|
+    inner_number = numbers[j]
+
+    puts "#{outer_number}, #{inner_number}"
+  end
+end
+```
+{: .repl #nested_loop title="Finding All Pairs in an Array" points="1"}
+
+**Time Complexity**: O(n^2) - This is because for each element in the array, the inner loop runs nearly n times, leading to a total of approximately n * n iterations. The time complexity scales *quadratically* with the size of the array, making it less efficient for large datasets.
+
+**Space Complexity**: O(1) - The space required is *constant* since we're only printing the pairs without storing any additional structures that grow with the input size.
 
 ### Hash Lookup
 ```ruby
@@ -30,9 +52,9 @@ puts students["Alice"]
 ```
 {: .repl #hash_lookup title="Hash Lookup" points="1"}
 
-**Time Complexity**: O(1) - Looking up a value in a hash by its key is a constant-time operation, meaning it takes the same amount of time regardless of the size of the hash.
+**Time Complexity**: O(1) - Looking up a value in a hash by its key is a *constant-time* operation, meaning it takes the same amount of time regardless of the size of the hash.
 
-**Space Complexity**: O(n) - The space complexity is linear with respect to the number of key-value pairs stored in the hash.
+**Space Complexity**: O(n) - The space complexity is *linear* with respect to the number of key-value pairs stored in the hash.
 
 ### Binary Search
 
@@ -68,9 +90,9 @@ puts binary_search(sorted_numbers, 15)
 ```
 {: .repl #binary_search title="Binary Search" points="1"}
 
-**Time Complexity**: O(log n) - Binary search has a logarithmic time complexity because it splits the search interval in half each time, significantly reducing the number of comparisons needed to find the target value.
+**Time Complexity**: O(log n) - Binary search has a *logarithmic* time complexity because it splits the search interval in half each time, significantly reducing the number of comparisons needed to find the target value.
 
-**Space Complexity**: O(log n) due to the call stack, which uses space proportional to the depth of the recursion, which is logarithmic.
+**Space Complexity**: O(log n) due to the call stack, which uses space proportional to the depth of the recursion, which is *logarithmic*.
 
 ### Bubble Sort
 
@@ -120,9 +142,9 @@ puts bubble_sort(unsorted_numbers)
 ```
 {: .repl #bubble_sort title="Bubble Sort" points="1"}
 
-**Time Complexity**: O(n^2) - Bubble sort is an example of a quadratic time complexity algorithm because it involves nested iterations over the collection, making it less efficient for large datasets.
+**Time Complexity**: O(n^2) - Bubble sort is an example of a *quadratic* time complexity algorithm because it involves nested iterations over the collection, making it less efficient for large datasets.
 
-**Space Complexity**: O(1) - Bubble sort sorts the array in place and does not require additional storage that grows with the input size, making its space complexity constant.
+**Space Complexity**: O(1) - Bubble sort sorts the array in place and does not require additional storage that grows with the input size, making its space complexity *constant*.
 
 ### Recursive Fibonacci
 
@@ -148,9 +170,12 @@ puts fibonacci(5)
 ```
 {: .repl #fibonacci title="Recursive Fibonacci" points="1"}
 
-**Time Complexity**: O(2^n) - The time complexity of the recursive Fibonacci algorithm is exponential due to the fact that it generates an exponentially growing number of function calls.
+**Time Complexity**: O(2^n) - The time complexity of the recursive Fibonacci algorithm is *exponential* due to the fact that it generates an exponentially growing number of function calls.
 
-**Space Complexity**: O(n) - The space complexity of the recursive Fibonacci is linear in the worst case due to the call stack. For each function call, a new frame is added to the call stack, and in the worst case, there are 'n' recursive calls for computing fibonacci(n).
+**Space Complexity**: O(n) - The space complexity of the recursive Fibonacci is *linear* in the worst case due to the call stack. For each function call, a new frame is added to the call stack, and in the worst case, there are 'n' recursive calls for computing fibonacci(n).
+
+
+<!-- TODO: add some multiple choice questions on linear, quadratic, exponential, constant, logarithmic etc. -->
 
 ## Data Structures: The Building Blocks 🧱
 Data structures are foundational concepts that enable us to organize and store data in a way that facilitates efficient access and modification. Here are some of the key structures you'll learn about:
