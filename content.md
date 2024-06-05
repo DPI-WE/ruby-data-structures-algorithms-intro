@@ -247,6 +247,103 @@ The coding interview is your opportunity to showcase your problem-solving skills
 - **Start with a Brute Force Solution**: It's okay to start with a simpler, less efficient solution. You can always refine it later.
 - **Test Your Code**: Before declaring that you're done, test your solution with different inputs to ensure it handles edge cases.
 
+## Pro Tips
+
+### Setup Your Local Environment
+Create a repository for all your data structures and algorithms practice. You can use the [Ruby Sandbox template](https://github.com/new?template_name=ruby-sandbox&template_owner=appdev-projects) to get started. This setup allows you to track your progress as you work through each problem.
+
+### Write Unit Tests with MiniTest
+[MiniTest](https://github.com/minitest/minitest) is a unit testing framework included with Ruby. Writing tests helps ensure your solutions are correct and robust.
+
+For example, if you have a `fibonacci.rb` file:
+
+```ruby
+# ./fibonacci.rb
+
+def fibonacci(n)
+  return n if n <= 1
+
+  fibonacci(n-1) + fibonacci(n-2)
+end
+```
+
+You can create a MiniTest file at tests/test_fibonacci.rb to test your code:
+
+```ruby
+# ./tests/test_fibonacci.rb
+require 'minitest/autorun'
+require_relative '../fibonacci'
+
+class TestFibonacci < Minitest::Test
+  def test_fibonacci_zero
+    assert_equal 0, fibonacci(0)
+  end
+
+  def test_fibonacci_five
+    assert_equal 5, fibonacci(5)
+  end
+
+  def test_fibonacci_ten
+    assert_equal 55, fibonacci(10)
+  end
+end
+```
+
+Run the tests with:
+
+```sh
+ruby tests/test_fibonacci.rb
+```
+
+Practicing Test Driven Development (TDD), where you write tests before the implementation, can be highly beneficial.
+
+### Use a Debugger
+The [debug gem](https://github.com/ruby/debug) adds debugging functionality like breakpoints. To use it, first create a `Gemfile` with `bundle init`, then add the debug gem:
+
+```ruby
+# Gemfile
+
+gem "debug"
+```
+
+Use the debugger in your code:
+
+```ruby
+# ./fibonacci.rb
+
+require 'debug'
+
+def fibonacci(n)
+  debugger # breakpoint
+  return n if n <= 1
+
+  fibonacci(n-1) + fibonacci(n-2)
+end
+```
+
+Running your code will pause execution at the breakpoint, allowing you to step through and inspect variables:
+
+```sh
+ruby fibonacci.rb
+```
+
+```
+[1, 10] in fibonacci.rb
+     1| 
+     2| require 'debug'
+     3| 
+     4| def fibonacci(n)
+=>   5|   debugger # breakpoint
+     6|   return n if n <= 1
+     7| 
+     8|   fibonacci(n-1) + fibonacci(n-2)
+     9| end
+    10| 
+=>#0    Object#fibonacci(n=5) at fibonacci.rb:5
+  #1    <main> at fibonacci.rb:11
+(rdbg)
+```
+
 ## Emulating the Inventor Mindset 💡
 As you progress through this module, remember the ethos of being an inventor. Just as you've learned to creatively combine Ruby's building blocks to solve problems, you'll now apply a similar mindset to algorithmic challenges. Approach each problem with curiosity, leveraging your understanding of data structures and algorithms to devise innovative solutions.
 
