@@ -2,6 +2,8 @@
 
 Welcome to the next step in your journey as a budding software developer. Having gained a solid foundation in Ruby and full-stack web development with Rails, you're now poised to delve deeper into the world of data structures and algorithms. This module is designed to arm you with the tools and knowledge necessary to excel in technical interviews and solve complex problems efficiently. Let's embark on this adventure together, where you will not only sharpen your coding skills but also become adept at thinking critically about algorithmic challenges.
 
+### [Here is a video for this lesson](https://www.youtube.com/watch?v=kTnS4mK9kJ0)
+
 ## Time and Space Complexity
 
 ### Embracing Big O Notation: The Gateway to Efficiency 📈
