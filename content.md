@@ -250,7 +250,7 @@ The coding interview is your opportunity to showcase your problem-solving skills
 ## Pro Tips
 
 ### Setup Your Local Environment
-Create a repository for all your data structures and algorithms practice. You can use the [Data Structures and Algorithms Workspace template]([https://github.com/new?template_name=ruby-sandbox&template_owner=appdev-projects](https://github.com/DPI-WE/leet-coding)) to get started. This setup allows you to track your progress as you work through each problem.
+Create a repository for all your data structures and algorithms practice. You can use the [Data Structures and Algorithms Workspace template](https://github.com/DPI-WE/leet-coding) to get started. This setup allows you to track your progress as you work through each problem.
 
 ### Write Unit Tests with MiniTest
 [MiniTest](https://github.com/minitest/minitest) is a unit testing framework included with Ruby. Writing tests helps ensure your solutions are correct and robust.
